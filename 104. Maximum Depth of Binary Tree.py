@@ -1,0 +1,38 @@
+from typing import Optional
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+        return 1 + max(self.maxDepth(root.left),self.maxDepth(root.right))
+
+        #approach using dequeue
+        if not root:
+            return 0
+        q = deque()
+        q.append(root)
+        depth =0 
+        while q:
+            depth += 1
+            for _ in range(len(q)):
+                node = q.popleft()
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+        return depth
+
+s = Solution()
+node = TreeNode(3, TreeNode(9), TreeNode(20, TreeNode(15), TreeNode(7)))
+print("Depth: ", s.maxDepth(node))
+
+
+def add(a):
+    print(a)
+    return a
+
+b = add(1) + add(2) + add(3)

@@ -29,7 +29,7 @@ class Solution:
         while node:
             print(node.val)
             node = node.next
-    #Approach 1 with divide and conquer
+    #Approach 1 with divide and conquer O(NlogK) N is total number of nodes, k is total number of lists     
     def mergeKLists1(self, lists: list[Optional[ListNode]]) -> Optional[ListNode]:
         if not list or len(lists) == 0:
             return None
@@ -43,7 +43,8 @@ class Solution:
                 b = lists[i+1] if i+1 < len(lists) else None
                 temp.append(self.merge2list(a,b))
             lists = temp
-        return lists[0]        
+        return lists[0]  
+    #Approach 2 with Heap => O(NlogK) N is total number of nodes, k is total number of lists     
     def mergeKLists2(self, lists: list[Optional[ListNode]]) -> Optional[ListNode]:
         minHeap = []
         counter = itertools.count()
@@ -56,7 +57,6 @@ class Solution:
             val, _, node = heappop(minHeap)
             current.next = node
             current = current.next
-            
             if node.next:
                 heappush(minHeap, (node.next.val, next(counter), node.next))
         return dummy.next

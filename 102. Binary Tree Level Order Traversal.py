@@ -16,7 +16,7 @@ class Solution:
         q.append(root)
         result.append([root.val])
         while(q):
-            n = len(q)
+            n = len(q)  
             l = []
             for _ in range(len(q)):
                 node = q.popleft()

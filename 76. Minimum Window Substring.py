@@ -12,7 +12,7 @@ class Solution:
         minLen = float("inf")
         for right, ch in enumerate(s):
             given[ch] += 1
-            if ch in need and given[ch] == need[ch]:
+            if ch in need and given[ch] <= need[ch]: #need to increase the have until it reaches required number of occurences
                 have += 1
             while have == lt:
                 if right - left + 1 < minLen:
@@ -23,11 +23,10 @@ class Solution:
                     have -= 1
                 left += 1
         return s[ansLeft: ansLeft + minLen] if ansLeft != -1 else ""
-                
-                
         
 
 s = Solution()
 print(s.minWindow("ADOBECODEBANC","ABC"))
 print(s.minWindow("a","a"))
 print(s.minWindow("a","aa"))
+print(s.minWindow("aa", "aa")) #specific testcase

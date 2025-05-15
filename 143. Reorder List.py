@@ -50,7 +50,7 @@ class Solution:
             current = nex
         current.next = prev
         s.print(current)
-    
+        #merging 2 list
         res = ListNode()
         dummy = res
         first = head

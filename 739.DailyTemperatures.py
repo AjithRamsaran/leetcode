@@ -1,3 +1,40 @@
+# Intuition
+# When trying to find the number of days until a warmer temperature, a brute-force approach would check each day ahead for every day, resulting in an O(n²) solution. But we can optimize this using a stack to keep track of the indices of unresolved temperatures in decreasing order. This allows us to efficiently find the next warmer day for each day.
+
+# Approach
+# We iterate through the temperatures list once from left to right. We use a stack to keep track of the indices of the days for which we haven't found a warmer temperature yet.
+
+# For each day's temperature:
+
+# While the stack is not empty and the current temperature is greater than the temperature at the index on the top of the stack:
+
+# It means we’ve found a warmer day for the previous day.
+
+# We pop the index from the stack and calculate the difference between the current index and that index to determine how many days the wait was.
+
+# After resolving any such days, we push the current day’s index onto the stack.
+
+# The stack always maintains indices in decreasing order of temperatures, which ensures each temperature is processed only once.
+
+# Complexity
+# Time complexity:
+# 𝑂
+# (
+# 𝑛
+# )
+# O(n)
+# Each index is pushed and popped at most once, resulting in a linear number of operations.
+
+# Space complexity:
+# 𝑂
+# (
+# 𝑛
+# )
+# O(n)
+# The space used by the stack and the result array is linear in the size of the input.
+
+
+
 class Solution:
     def dailyTemperatures(self, temperatures: list[int]) -> list[int]:
         n = len(temperatures)

@@ -1,3 +1,4 @@
+#time taken to solve: 30 mins
 import re
 class Solution:
     def isPalindrome(self, s: str) -> bool:

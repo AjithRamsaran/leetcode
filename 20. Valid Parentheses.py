@@ -1,3 +1,4 @@
+#time taken to solve: 15 mins
 class Solution:
     def isValid(self, s: str) -> bool:
         l = []
@@ -17,3 +18,4 @@ print(s.isValid('{'))
 print(s.isValid("(("))
 print(s.isValid("))"))
 print(s.isValid("[]"))
+

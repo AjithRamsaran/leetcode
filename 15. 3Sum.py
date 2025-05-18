@@ -15,7 +15,7 @@ class Solution:
             while left < right:
                 if  nums[left] + nums[right] == target:
                     res.append([nums[i], nums[left], nums[right]])
-                    while  left < right and     nums[left] == nums[left - 1]:
+                    while  left < right and     nums[left] == nums[left + 1]:
                         left += 1
                     while left < right and nums[right]  == nums[right - 1]:
                         right -= 1
@@ -59,4 +59,5 @@ s =  Solution()
 print(s.threeSum([-1,0,1,2,-1,-4]))
 print(s.threeSum([0,1,1]))
 print(s.threeSum([0,0,0]))
+print(s.threeSum([-1,0,1,0]))
 print(s.threeSum([-1,0,1,2,-1,-4]))

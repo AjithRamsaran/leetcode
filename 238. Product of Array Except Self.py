@@ -1,4 +1,5 @@
-#time taken solve: 6 mins
+#time taken solve: 45 mins
+#Logic: store previous product to current index in an array in left to right iteration. similarly do the right to left. multiple both values thats the answer. 
 from typing import List
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
@@ -11,7 +12,6 @@ class Solution:
         for i in range(len(nums)-1, -1, -1):
             result[i] *= product
             product *= nums[i]
-        
         return result
     
 s = Solution()

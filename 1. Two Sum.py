@@ -1,4 +1,4 @@
-#time taken solve:
+#time taken solve: 5 mins
 from typing import List
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:

@@ -1,6 +1,6 @@
 # Definition for singly-linked list.
 from typing import Optional
-from heapq import heappush, heappop, heapify
+from heapq import heappush, heappop
 import itertools 
 class ListNode:
     def __init__(self, val=0, next=None):

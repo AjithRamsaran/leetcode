@@ -1,4 +1,4 @@
-#time taken solve:  mins
+#time taken solve: 6 mins
 from typing import List
 from collections import defaultdict 
 class Solution:

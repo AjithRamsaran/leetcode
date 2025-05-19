@@ -1,4 +1,4 @@
-#time taken solve:  mins
+#time taken solve: 25 mins
 from typing import List
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:

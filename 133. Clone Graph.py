@@ -9,6 +9,16 @@ class Node:
 from typing import Optional
 class Solution:
     def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
+        #dfs approach
+        clones = {}
+        def clone(node):
+            if node.val in clones:
+                return clones[node.val]
+            clones[node.val] = Node(node.val, [])
+            for nbr in node.neighbors:
+                clones[node.val].neighbors.append(clone(nbr))
+            return clones[node.val]
+        return clone(node) if node else node
         
         #bfs approach
         if not node:
@@ -25,3 +35,5 @@ class Solution:
                     q.append(nbr)
                 curClone.neighbors.append(clones[nbr.val])
         return clones[node.val]
+    
+    

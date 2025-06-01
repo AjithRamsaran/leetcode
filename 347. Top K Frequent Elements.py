@@ -1,3 +1,4 @@
+#time taken to solve: 45 mins
 from collections import defaultdict
 from heapq import heappush, heappop
 import itertools

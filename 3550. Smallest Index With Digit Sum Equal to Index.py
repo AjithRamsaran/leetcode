@@ -1,4 +1,3 @@
-
 #time taken to solve: 15 mins
 from typing import List
 class Solution:
